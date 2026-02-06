@@ -467,23 +467,155 @@ html {
   z-index: 1;
 }
 
+.contact-info {
+  padding-right: 2rem;
+}
+
+.contact-info h3,
+.contact-form-wrapper h3 {
+  color: var(--accent);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.contact-info p {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
 .contact-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .contact-item:hover {
+  background: rgba(255, 255, 255, 0.05);
   transform: translateX(10px);
 }
 
 .contact-item i {
   color: var(--accent);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  min-width: 30px;
+  margin-top: 0.2rem;
+}
+
+.contact-item div {
+  flex: 1;
+}
+
+.contact-item strong {
+  display: block;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.contact-item a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+.contact-item span {
+  color: var(--text-muted);
+}
+
+/* Social Links */
+.social-links {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+.social-links h4 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  color: var(--text-color);
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: var(--accent);
+  color: var(--dark-bg);
+  transform: translateY(-5px);
+}
+
+/* Contact Form */
+.contact-form-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-form .form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(100, 255, 218, 0.1);
+  color: var(--text-color);
+}
+
+.contact-form .form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.contact-form textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--dark-bg);
+  border: none;
+  padding: 0.9rem 2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
 }
 
 /* ==========================================
@@ -494,8 +626,58 @@ footer {
   background: var(--slategray-dark);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem 0;
-  text-align: center;
   color: var(--text-muted);
+}
+
+footer p {
+  margin: 0;
+}
+
+.back-to-top {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-to-top:hover {
+  color: var(--accent);
+}
+
+.back-to-top i {
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .contact-info {
+    padding-right: 0;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact {
+    padding: 3rem 0;
+  }
+  
+  .contact-item {
+    gap: 1rem;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+  
+  footer .row > div {
+    text-align: center !important;
+  }
 }
 
 /* ==========================================
